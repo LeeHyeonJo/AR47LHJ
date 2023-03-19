@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="003_포인터 기초.cpp">
+    <ClCompile Include="004_포인터(기초2).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
