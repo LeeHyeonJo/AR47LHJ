@@ -11,19 +11,12 @@ int main()
 
     // 간단히 사용법 우선해서 훑어봄. 
 
-    char arr[4] = "123";
-    int a = 0;
+    char Arr[4] = "123";
+
     // char arr[3] = "123";이 안 되는 이유! 접은 글 참고  
-   
-    char Arr[3] = "ab";
-    printf_s(Arr); 
 
-    return 0;
-
-
-
-
-
+    /*char Arr[3] = "ab";
+    printf_s(Arr);*/
 
 
 
@@ -37,14 +30,50 @@ int main()
     // 자료형이 다르기 때문에 오른쪽에서 왼쪽으로 들어가지 못한다.
     // char Value1 = Arr;
 
-    // 제로베이스 기반.
-    // 배열의 개수를 샐때 0부터 세는것을 
-    // 제로베이스 기반 인덱스 표현이라고 합니다.
-    /*char Value1 = Arr[0];
-    char Value2 = Arr[1];
-    char Value3 = Arr[2];
-    char Value4 = Arr[3];
-    char Value5 = Arr[4];*/
 
-    //printf_s(Arr);
+    // 인덱스(index)란? : 0부터 시작하는 인덱스(index)를 이용하면 각각의 배열 요소에 따로 접근할 수 있다
+    // 배열의 개수를 샐때 0부터 세는것을 "제로베이스 기반 인덱스 표현"이라고 합니다. (메모리 주소가 0부터 시작하므로) 
+
+
+    // char Arr[4] = "123";
+    char Value1 = Arr[0]; // 1
+    char Value2 = Arr[1]; // 2
+    char Value3 = Arr[2]; // 3
+    char Value4 = Arr[3]; // 여기에는 컴파일러가 부여한 0이 붙죠? 
+    char Value5 = Arr[4]; // Arr에서 잘못된 데이터를 읽는다는 경고 (메모리에서 이상한 값 끌어옴) & 인덱스 범위를 벗어남 
+
+    // printf_s(Arr); // 따라서 출력되는건 123 
+
+
+    // 하나 더 연습해보자. char arr[5] = "1234" 로, 아마 오버플로우라고 뜰듯. 그리고 프린트f로 arr 출력해보기.  
+    // 인덱스: 배열에서의 위치를 나타내는 숫자. 특정 요소에 개입하고 싶을 때 사용. 
+    // 사용법: 변수선언 = 배열이름[인덱스숫자];
+    char arr[5] = "5678";
+
+    char x1 = arr[0]; //5 >>  int 로 x1을 받는다면, 문자 5가 있는 자리에 대응하는 정수가 들어감 
+    char x2 = arr[1]; //6 >> 배열의 요소를 가져올때 배열의 자료형(char)과 다른 형태로 선언해도(int)
+    char x3 = arr[2]; //7 >> 안되는건 아님. 근데 굳이 할 이유가 .. 
+    char x4 = arr[3]; //8
+    char x5 = arr[4]; // 컴파일러가 넣어준 0이 나옴
+
+    // char 형 배열이므로 printf_s로 출력할 수 있음. 
+    // printf_s(arr); //5678이 출력되겠네 
+
+    // 일부만 뽑아서 출력하고 싶다면.. 
+
+    // printf_s(x1); // 오류: "char" 형식의 인수가 "const char *" 형식의 매개 변수와 호환되지 않습니다.
+
+    // printf_s(arr[0]); // 오류: "char" 형식의 인수가 "const char *" 형식의 매개 변수와 호환되지 않습니다.
+
+
+    bool arr1[3] = { true,false }; //인덱스는 0,1까지
+
+    bool z1 = arr1[0];
+    bool z2 = arr1[1];
+    bool z3 = arr1[2]; // 여기부터 값이 멋대로 들어감~ 
+    bool z4 = arr1[3];
+    bool z5 = arr1[4];
+    bool z6 = arr1[5];
+
+
 }
