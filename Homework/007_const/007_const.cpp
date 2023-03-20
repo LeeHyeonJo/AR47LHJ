@@ -23,7 +23,10 @@ int main()
 
     const int ArrSize = 30;
 
-    // 왜 안되지?
+    // ArrSize가 상수화 (read only) 가 되었으므로, 이제 배열의 인덱스로 사용할 수 있게 됨. 
     // int Value[ArrSize] = {};
 
     int Value[ArrSize] = {};
+
+    // 단, const를 사용한 변수는 재선언할 수 없다. 
+    // int ArrSize = 15; <- 이렇게 해도 안 바뀜. 이미 고정된 값이기 때문. 
