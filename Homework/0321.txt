@@ -1,0 +1,37 @@
+const char* const 변수 의 의미
+
+1) 변하지 않는 char을 인자로 받겠다 - 앞 const char
+2) 근데 포인터로 쓸겅미 ㅎㅎ : const char* (자료형 뒤에 붙음) 
+3) 자 이제 const char* 변수가 됐죠? -> 이대로 두면 nullptr 값이 들어갈 수도 임ㅅ음
+근데 공격력에 null이 들어가면 곤란하죠
+4) const char* const<- =const char*로 받은 변수를 변경하지 않겠다 해서 뒤에 const가 또 붙음 
+(const char*) const 이런겅미 
+
+
+const char const 로 선언한다면 글자 하나만 들어가게 됨. 
+const char* const 여야 "player" 가 출력된다. 
+
+
+레퍼런스와 포인터 
+
+차이점은 null이 없 ./ 있음의 차이 
+>> 변수의 특성을 잘 생각하고 null이 있어도 되는지 아닌지를 판단하고 쓸 것 
+
+좀 더 간단한건 레퍼 
+
+int* Ptr = &Value;
+int& Ref = Value;
+
+이 둘은 완전 같은 의미
+변수를 끌어쓸때 *Ptr = Ref 가 됨. 
+
+단, 포인터는 null값을 쓸 수 있고 레퍼는 못 씀(반드시 어떠한 값을 가리켜야함) 다는 차이가 있음. 
+(ex. 공격력인데 아무 값도 없으면 안됨. 같을땐 레퍼를 씀) 
+
+0321 카톡 질의응답 일부 정리 
+
+
+해야할 것 정리
+1. 수학 공부
+2. TIL 블로그
+3. 단축키 빠르게 익히기 
