@@ -32,7 +32,6 @@ void status_print(
 
 }
 
-
 int main()
 {
     int playeratt = 10;//pl의 공격력(인간)
