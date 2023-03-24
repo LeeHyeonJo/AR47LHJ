@@ -5,7 +5,7 @@
 #include <conio.h> // _getch() 를 사용
 #include <stdlib.h> // system("cls") 사용
 
-// damage 함수를 수정. att에 의한 hp 변경을 main 함수로 이동 
+// damage 함수를 수정. att에 의한 hp 변경을 main 으로 이동 
 void damage_print(
     const char* const attname, // 공격하는 캐릭터 이름 
     const char* const defname, // 공격당하는 캐릭터 이름 
@@ -31,6 +31,7 @@ void status_print(
     printf_s("*--*--*--*--*--*--*--*--*--*\n");
 
 }
+
 
 int main()
 {
