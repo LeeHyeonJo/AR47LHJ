@@ -19,7 +19,7 @@ int main()
 	{
 		for (size_t x = 0; x < ScreenXSize; x++)
 		{
-			Arr[y][x] = 'a';
+			Arr[y][x] = 'a'; // for문을 사용해 배열의 요소를 전부a로 채워줌. 
 		}
 	}
 
@@ -64,7 +64,7 @@ int main()
 		// 새로운 위치를 * 문자로 변경
 		Arr[PlayerY][PlayerX] = '*';
 
-		for (size_t y = 0; y < ScreenYSize; y++)
+		for (size_t y = 0; y < ScreenYSize; y++) // 이건 배열을 화면에 출력해주는 코드 
 		{
 			for (size_t x = 0; x < ScreenXSize; x++)
 			{
