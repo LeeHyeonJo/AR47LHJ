@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f99695c6-ed3f-41d8-b6e7-f36fa1a6e2d6}</ProjectGuid>
-    <RootNamespace>Homework0327</RootNamespace>
+    <ProjectGuid>{dc8f85f6-d8f6-4eec-8310-cd71ce62dcff}</ProjectGuid>
+    <RootNamespace>Homework03301</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Homework0327(x)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Homework0327.cpp" />
+    <ClCompile Include="Homework(0330)1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
