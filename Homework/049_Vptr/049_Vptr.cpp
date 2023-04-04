@@ -15,18 +15,19 @@
 class FightUnit
 {
 public:
-    virtual void Damage() // override가 없다 -> 엄마의 멤.함은 그대로 엄마꺼가 됨. this에서 확인 가능함. 
+    virtual void Damage() // 멤버함수를 가상함수화 (virtual을 멤버 함수 앞에 붙여서 사용) 
+        // 가상함수로 사용: 부모의 멤.함을 자식껄로 쓸 수 잇게 됨. (Player:: 이렇게)  
+        // 가상함수로 사용하지 않음: 부모의 멤.함은 여전히 부모의 것. (FightUnit:: 이렇게) <- 일어나서 확인해보기 
     {
 
     }
 
-    virtual void FightStatusRender() // override 걸었다 - > 엄마의 멤.함을 자식껄로 쓸 수 잇게 됨. 
-        // 가상함수가 2개여도 플레이어의 크기는 8. 
+    virtual void FightStatusRender()   // 가상함수가 2개여도 플레이어의 크기는 8. 
     {
 
     }
 
-    // 왜 플레이어의 크기는 여전히 8인가? (이중포인터(함수 포인터)와 연관있음) //?? 
+    // 왜 플레이어의 크기는 여전히 8인가? (이중포인터(함수 포인터)와 연관있음) 
 
     // virtual 이 붙어있는 클래스가 존재한다면, 클래스의 객체가 생성될때 
     // 
@@ -34,41 +35,48 @@ public:
 public:
     FightUnit()
         // [0]FightUnit::Damage
-        // [1]FightUnit::FightStatusRender // o
+        // [1]FightUnit::FightStatusRender 
     {
-        this; // 여기에서 가상함수 테이블을 확인할 수 있음. 
-        // 가상함수 테이블에서 먼저 : 0테이블에 player::damage, 1테이블은 player::스테이터스 렌더 
-                    // ㄴ 오버라이드를 둘 다 걸어준 상태: 엄마 클래스의 멤.함 damage,스테이터스렌더가 player꺼가 되었음.
+        this;
+        // 여기에서 가상함수 테이블을 확인할 수 있음. 
+        // 당연하게도 FightUnit 에 속한 멤버함수 2개가 호출됨. 
         int a = 0;
     }
 };
 
-class Player : public FightUnit
+class Player : public FightUnit // Player가 FightUnit를 상속 
 {
 public:
-    void Damage() override
-    {
+    void Damage() override  // ovverride는 생략 가능. 그냥 표시해준거임. 
+    { // 오버라이딩: 가상함수를 파생 클래스에서 재정의하는 것을 의미. 
+        // Damage 가상함수는 FightUnit의 파생 클래스 Player에서 재정의 되었다. 라는 뜻. 
+        // 재정의 시, 파생 클래스 쪽의 멤버함수가 우선시된다. 
 
     }
 
-    //void FightStatusRender() override
-    //{
+    void FightStatusRender() override 
+    {
 
-    //}
+    }
 
 public:
     Player()
         // [0]Player::Damage
-        // [1]FightUnit::FightStatusRender
+        // [1]Player::FightStatusRender
+            // =  부모 클래스의 멤.함 damage,스테이터스렌더가 전부 "가상함수"이므로  player것 처럼 사용할 수 있음
+            // 부모의 것인 채로 사용하고 싶다면, 가상함수를 해제하면 됨. <- 아침에 확인해보기. 
     {
         this; // 마찬가지로 여기에 중단점 걸어서 가상함수 테이블 확인해보기.  
-        int a = 0;
+
+            int a = 0;
     }
 };
 
+
+
 // 클래스를 하나 더 만들어서 상속 더 내려보기 //
 
-class Fighter : public Player // 파이트 유닛(여기서 오버라이드 2개) > 플레이어 > 파이터  
+/*class Fighter : public Player // 파이트 유닛(여기서 오버라이드 2개) > 플레이어 > 파이터  
 {
     // public: 
     // fighter(); 생성자가 먼저 만들어지고 
@@ -77,7 +85,7 @@ class Fighter : public Player // 파이트 유닛(여기서 오버라이드 2개
     // [1]FightUnit :: FightStatusRender
     //   엄마클래스 - 파이트 유닛에서부터 둘 다 오버라이드가 걸려있으니 주르륵~내려오는것. 
     // }
-};
+};*/
 
 int main()
 {
