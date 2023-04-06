@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{27dd616e-08a0-46ad-886f-2ac6945345c8}</ProjectGuid>
+    <ProjectGuid>{3C097D03-CB34-46BF-A754-D63943560F3E}</ProjectGuid>
     <RootNamespace>GameEngineArray</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>GameEngineArray(T)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -131,7 +132,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Homework0405.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameEngineArray.h">
