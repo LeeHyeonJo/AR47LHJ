@@ -4,6 +4,11 @@
 #include <Windows.h>
 #include "Bullet.h"
 
+// 이 파일아닌듯 ㅋㅋ 
+
+// 포인트: 플레이ㅓ를 콘솔게임 오브젝트의 포인터로 사용한다는 점이 중요. 
+
+
 Player::Player() 
 {
 

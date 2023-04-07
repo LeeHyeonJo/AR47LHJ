@@ -26,7 +26,7 @@ public:
 		// ArrPtr = new int[100];
 	}
 
-	~GameEngineArray()
+	~GameEngineArray() // 이거때문에 성립하는거임. 
 	{
 		if (nullptr != ArrPtr)
 		{
@@ -93,7 +93,7 @@ public:
 protected:
 
 private:
-	size_t ArrCount;
+	size_t ArrCount; // = -1, 또는 0으로 화면의 사이즈 상태를 확실하게 명시할 수 있게 됨.  screencpp로 이동. 
 	DataType* ArrPtr = nullptr;
 
 };

@@ -16,7 +16,10 @@ public:
 		return MainScreen;
 	}
 
-	static int2 GetScreenSize();
+	static int2 GetScreenSize(); // static 떼고  
+	//{
+		//return MainScreen.GetScreenSize(); //한번 더 정의해주는건데 좋은 상황은 아닌ㅁ 
+	//}
 
 	void ScreenClear();
 
@@ -31,15 +34,21 @@ protected:
 private:
 	// char Arr[ScreenYSize][ScreenXSize] = { 0, };
 
-	GameEngineArray<GameEngineArray<char>> ArrScreen;
+	// 8. 이것이 본질적이 무엇과 같은지 코드 참고
+	// 대풍 무언가의 포인터라는 건 이해함. 
+
+	// 여기 중요함!!!!!!!!!!! class GameEngineArray 내부에 잇는 기능을 이해하기. 
+	// 
+	// char** ArrScreen = nullptr; // 이것과 아래가 같은 코드라는 걸 이해할 것. 그런데 차이가 있음. 얘는 모든 기능(ex. delete)을 다 쳐주야 함. 
+
+	GameEngineArray<GameEngineArray<char>> ArrScreen; // 6. 이걸 사용하면 delete를 사용하지 않아도 되게 됨. 이미 소멸자에서 구현해두었기 때문. cpp로 이동. 
+
+	// 위 코드는 clas GameEngineArray로 구현한것이고, 모든 기능을 그안에 담고있으므로 위 코드보다 훨씬 쓰기 편함. 
+
 
 	ConsoleGameScreen();
 
 	// 싱글톤 패턴이라고 합니다.
-	// 패턴이란 => 클래스를 짤때 이러이러한 구조가 정말 많이 사용된다.
-	// 갱스오브포라고 불리는 프로그래머 동호회가 있었다.
-	// 클래스간의 관계나 구조를 짜는 방식이 비슷한 녀석들을 모아서 이름을 붙였는데.
-	// 그걸 디자인 패턴이라고 하고.
-	// 아무도 안써요.
+
 	static ConsoleGameScreen MainScreen;
 };
