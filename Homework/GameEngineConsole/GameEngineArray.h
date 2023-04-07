@@ -2,9 +2,9 @@
 #include <GameEngineBase/GameEngineDebug.h>
 // #include <Program Files/Adobe/Adobe Creative Cloud Experience/>
 
-typedef int DataType;
+// typedef int DataType;
 
-// 설명 :
+template<typename DataType>
 class GameEngineArray
 {
 public:
@@ -19,7 +19,7 @@ public:
 	{
 		if (0 >= _Value)
 		{
-			//MsgBoxAssert("0크기의 배열은 만들수 없습니다.");
+			MsgBoxAssert("0크기의 배열은 만들수 없습니다.");
 		}
 
 		ReSize(_Value);
@@ -46,13 +46,13 @@ public:
 		ReSize(_Other.ArrCount);
 		for (size_t i = 0; i < _Other.ArrCount; i++)
 		{
-			ArrPtr[i] = _Other[i];
+			 ArrPtr[i] = _Other[i];
 		}
 
 		return *this;
 	}
 
-	size_t Count()
+	size_t Count() 
 	{
 		return ArrCount;
 	}
@@ -62,7 +62,7 @@ public:
 		return ArrPtr[_Index];
 	}
 
-	void ReSize(int _Value)
+	void ReSize(int _Value) 
 	{
 		// 20줄 안팍.
 		// 삼항 연산자 써보시면 좋을겁니다.
@@ -98,4 +98,3 @@ private:
 
 };
 
- 

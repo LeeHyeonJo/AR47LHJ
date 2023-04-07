@@ -21,10 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4bb0ffb4-b2d6-44cc-91c3-650e4ef3fec6}</ProjectGuid>
-    <RootNamespace>My052arrayheap</RootNamespace>
+    <ProjectGuid>{e5971b22-e227-44ff-a9f7-bcb8599c3346}</ProjectGuid>
+    <RootNamespace>My054DeepcopyandShallowcopy</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>052_arrayheap(x)</ProjectName>
+    <ProjectName>054_DeepcopyandShallowcopy(0406)</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="052_arrayheap.cpp" />
+    <ClCompile Include="054_DeepcopyandShallowcopy.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
